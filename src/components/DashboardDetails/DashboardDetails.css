@@ -1,0 +1,51 @@
+.assistant-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(228, 242, 255, 0.95));
+  border: 1px solid rgba(15, 76, 129, 0.16);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 22px 50px rgba(15, 76, 129, 0.12);
+  position: relative;
+}
+
+.assistant-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(66, 163, 216, 0.18), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(15, 76, 129, 0.12), transparent 24%);
+  border-radius: 28px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.assistant-card h2 {
+  margin: 0 0 16px;
+  color: #0f4c81;
+}
+
+.assistant-card p {
+  color: #475569;
+  line-height: 1.8;
+}
+
+.module-actions {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.module-actions button {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #0f4c81;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.module-actions button:hover {
+  background: #164d77;
+}

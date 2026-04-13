@@ -1,0 +1,36 @@
+.dashboard-page {
+  min-height: 100vh;
+  padding: 32px 24px 48px;
+  background: radial-gradient(circle at top left, rgba(15, 76, 129, 0.16), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(66, 163, 216, 0.12), transparent 18%),
+    linear-gradient(135deg, #f5f9ff 0%, #ecf4fb 45%, #e5eff8 100%);
+}
+
+.dashboard-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-hero,
+.dashboard-section {
+  max-width: 1200px;
+  margin: 0 auto 32px;
+}
+
+.dashboard-highlight {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 24px;
+}
+
+@media (max-width: 960px) {
+  .dashboard-highlight {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .dashboard-page {
+    padding: 24px 16px 40px;
+  }
+}

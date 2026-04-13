@@ -1,0 +1,71 @@
+.chat-card {
+  display: grid;
+  gap: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(228, 242, 255, 0.95));
+  border: 1px solid rgba(15, 76, 129, 0.16);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 22px 50px rgba(15, 76, 129, 0.12);
+  position: relative;
+}
+
+.chat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(66, 163, 216, 0.18), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(15, 76, 129, 0.12), transparent 24%);
+  border-radius: 28px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.chat-messages {
+  display: grid;
+  gap: 12px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.chat-message {
+  max-width: 100%;
+  padding: 14px 16px;
+  border-radius: 18px;
+  line-height: 1.6;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.chat-message.user {
+  background: #e0f2fe;
+  justify-self: end;
+}
+
+.chat-input {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.chat-input input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 14px 16px;
+  outline: none;
+  color: #0f172a;
+}
+
+.chat-input input::placeholder {
+  color: #94a3b8;
+}
+
+.chat-input button {
+  border: none;
+  border-radius: 16px;
+  padding: 14px 18px;
+  background: #0f4c81;
+  color: #fff;
+  cursor: pointer;
+}

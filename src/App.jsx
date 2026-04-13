@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Footer from './components/Footer/Footer.jsx'
 import HomePage from './views/index/index.jsx'
-import About from './views/About.jsx'
-import Contact from './views/Contact.jsx'
-import Dashboard from './views/Dashboard.jsx'
-import Login from './views/Login.jsx'
+import About from './views/index/About.jsx'
+import Contact from './views/index/Contact.jsx'
+import Dashboard from './views/dashbord/Dashboard.jsx'
+import Login from './views/login/Login.jsx'
 
 function App() {
   return (
