@@ -7,6 +7,9 @@ import About from './views/index/About.jsx'
 import Contact from './views/index/Contact.jsx'
 import Dashboard from './views/dashbord/Dashboard.jsx'
 import Login from './views/login/Login.jsx'
+import Spark from './views/spark/spark.jsx'
+import TopperSuccess from './views/toppersuccess/toppersuccess.jsx'
+import Settings from './views/settings/Settings.jsx'
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/courses" element={<Spark />} />
+          <Route path="/toppersuccess" element={<TopperSuccess />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

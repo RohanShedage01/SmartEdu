@@ -1,0 +1,13 @@
+.spark-page {
+  min-height: 100vh;
+  padding: 40px 24px 80px;
+  background: radial-gradient(circle at top left, rgba(15, 76, 129, 0.14), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(66, 163, 216, 0.12), transparent 18%),
+    linear-gradient(135deg, #f5f9ff 0%, #ecf4fb 45%, #e7eef9 100%);
+}
+
+@media (max-width: 640px) {
+  .spark-page {
+    padding: 28px 18px 60px;
+  }
+}
