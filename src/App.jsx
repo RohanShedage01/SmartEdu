@@ -6,8 +6,7 @@ import HomePage from './views/index/index.jsx'
 import About from './views/index/About.jsx'
 import Contact from './views/index/Contact.jsx'
 import Dashboard from './views/dashbord/Dashboard.jsx'
-import Login from './views/login/Login.jsx'
-import Signup from './views/login/Signup.jsx'
+import Login from './views/getstarted/Login.jsx'
 import Spark from './views/spark/spark.jsx'
 import TopperSuccess from './views/toppersuccess/toppersuccess.jsx'
 import Settings from './views/settings/Settings.jsx'
@@ -55,7 +54,7 @@ function App() {
               }
             />
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup" element={<Navigate to="/login?tab=signup" replace />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

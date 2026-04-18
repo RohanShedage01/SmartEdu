@@ -18,8 +18,7 @@ function Footer() {
           <nav>
             <a href="/">Home</a>
             <a href="/dashboard">Dashboard</a>
-            <a href="/login">Login</a>
-            <a href="/signup">Sign Up</a>
+            <a href="/login">Get Started</a>
           </nav>
         </div>
 

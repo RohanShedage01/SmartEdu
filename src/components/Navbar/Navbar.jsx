@@ -38,14 +38,9 @@ function Navbar({ isDarkMode, onToggleMode }) {
             Logout
           </button>
         ) : (
-          <>
-            <NavLink to="/login" className="nav-cta">
-              Login
-            </NavLink>
-            <NavLink to="/signup" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
-              Sign Up
-            </NavLink>
-          </>
+          <NavLink to="/login" className="nav-cta">
+            Get Started
+          </NavLink>
         )}
 
         <DarkModeToggle isDarkMode={isDarkMode} onToggleMode={onToggleMode} />
