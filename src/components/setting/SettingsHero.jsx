@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SettingsHero({ isDarkMode, onToggleMode }) {
+function SettingsHero() {
   return (
     <section className="settings-hero">
       <div>
@@ -15,9 +15,6 @@ function SettingsHero({ isDarkMode, onToggleMode }) {
         <div>
           <h2>Feature hub</h2>
           <p>Quick access to profile, notifications, security, and theme preferences.</p>
-          <button className="mode-toggle-button" type="button" onClick={onToggleMode}>
-            Switch to {isDarkMode ? 'Light' : 'Dark'} Mode
-          </button>
         </div>
       </div>
     </section>

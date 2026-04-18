@@ -8,6 +8,35 @@
     linear-gradient(135deg, #f5f9ff 0%, #ecf4fb 45%, #e5eff8 100%);
 }
 
+.settings-page.dark {
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.1), transparent 18%),
+    linear-gradient(135deg, #071127 0%, #0b1933 45%, #0f2042 100%);
+  color: #e2e8f0;
+}
+
+.settings-page.dark .settings-hero,
+.settings-page.dark .settings-panel-group {
+  background: rgba(10, 20, 40, 0.96);
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+.settings-page.dark .settings-hero p,
+.settings-page.dark .settings-hero-card h2,
+.settings-page.dark .settings-hero-card p {
+  color: rgba(226, 232, 240, 0.88);
+}
+
+.settings-page.dark .settings-hero-card {
+  background: rgba(11, 23, 46, 0.9);
+  border-color: rgba(59, 130, 246, 0.18);
+}
+
+.settings-page.dark .settings-badge {
+  background: rgba(59, 130, 246, 0.18);
+  color: #dbeafe;
+}
+
 .settings-page::before,
 .settings-page::after {
   content: '';

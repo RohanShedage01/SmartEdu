@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Settings.css'
 import SettingsHero from '../../components/setting/SettingsHero'
 import FeatureGrid from '../../components/setting/FeatureGrid'
@@ -12,19 +12,13 @@ const featureBlocks = [
   { icon: '💬', title: 'Support', caption: 'Reach out for help and quick guidance anytime.' },
 ]
 
-function Settings() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-
-  const handleModeToggle = () => {
-    setIsDarkMode((prev) => !prev)
-  }
-
+function Settings({ isDarkMode }) {
   const activeTheme = isDarkMode ? 'dark' : 'default'
 
   return (
     <div className={`settings-page ${activeTheme}`}>
       <div className="settings-shell">
-        <SettingsHero isDarkMode={isDarkMode} onToggleMode={handleModeToggle} />
+        <SettingsHero />
 
         <section className="settings-panel">
           <FeatureGrid featureBlocks={featureBlocks} />

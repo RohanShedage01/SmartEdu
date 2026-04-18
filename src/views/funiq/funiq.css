@@ -1,0 +1,138 @@
+.funiq-page {
+  min-height: 100vh;
+  padding: 40px 24px 80px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eef4f8 100%);
+}
+
+.funiq-hero {
+  max-width: 840px;
+  margin-bottom: 40px;
+}
+
+.funiq-tag,
+.section-pill,
+.section-pill-alt {
+  display: inline-flex;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.funiq-tag {
+  background: rgba(15, 76, 129, 0.12);
+  color: #0f4c81;
+}
+
+.section-pill {
+  background: rgba(15, 76, 129, 0.12);
+  color: #0f4c81;
+}
+
+.section-pill-alt {
+  background: rgba(66, 163, 216, 0.13);
+  color: #124776;
+}
+
+.funiq-hero h1 {
+  margin: 18px 0 16px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: #102a51;
+  line-height: 1.05;
+}
+
+.funiq-hero p {
+  margin: 0;
+  max-width: 720px;
+  color: #475569;
+  line-height: 1.75;
+}
+
+.section-heading {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.funiq-card-grid,
+.match-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.funiq-card,
+.match-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(233, 242, 255, 0.98));
+  border: 1px solid rgba(15, 76, 129, 0.14);
+  border-radius: 28px;
+  box-shadow: 0 22px 50px rgba(15, 76, 129, 0.1);
+  padding: 24px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.funiq-card:hover,
+.match-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(15, 76, 129, 0.28);
+  box-shadow: 0 28px 60px rgba(15, 76, 129, 0.14);
+}
+
+.funiq-card-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: rgba(15, 76, 129, 0.08);
+  color: #0f4c81;
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+}
+
+.funiq-card h3,
+.match-card h3 {
+  margin: 0 0 12px;
+  color: #102a51;
+  font-size: 1.2rem;
+}
+
+.funiq-card p,
+.match-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.funiq-card-footer {
+  margin-top: 20px;
+  display: grid;
+  gap: 6px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.funiq-card-footer strong {
+  color: #0f4c81;
+}
+
+.match-card {
+  min-height: 170px;
+}
+
+@media (max-width: 900px) {
+  .funiq-page {
+    padding: 32px 18px 64px;
+  }
+}
+
+@media (max-width: 640px) {
+  .funiq-card,
+  .match-card {
+    padding: 20px;
+  }
+}

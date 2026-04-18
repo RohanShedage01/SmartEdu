@@ -1,3 +1,27 @@
 ﻿body {
   transition: background 0.3s ease, color: 0.3s ease;
 }
+body.dark {
+  background: #07111f;
+  color: #e2e8f0;
+}
+
+body.dark .smartedu-navbar {
+  background: rgba(4, 23, 49, 0.95);
+}
+
+body.dark .nav-item {
+  color: rgba(226, 232, 240, 0.85);
+}
+
+body.dark .nav-item.active {
+  color: #ffffff;
+}
+
+body.dark .nav-cta {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+body.dark a {
+  color: #93c5fd;
+}

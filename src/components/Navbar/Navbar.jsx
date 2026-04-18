@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import DarkModeToggle from '../DarkMode/darkmode.jsx'
+import { AuthContext } from '../../auth/AuthContext.jsx'
 import './Navbar.css'
 
-function Navbar() {
+function Navbar({ isDarkMode, onToggleMode }) {
+  const { isAuthenticated, logout } = useContext(AuthContext)
+
   return (
     <header className="smartedu-navbar">
       <div className="navbar-brand">
@@ -24,10 +28,27 @@ function Navbar() {
           <NavLink to="/courses" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
             Spark
           </NavLink>
+          <NavLink to="/funiq" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+            FunIQ
+          </NavLink>
         </nav>
-        <NavLink to="/login" className="nav-cta">
-          Get Started
-        </NavLink>
+
+        {isAuthenticated ? (
+          <button type="button" className="nav-cta logout-button" onClick={logout}>
+            Logout
+          </button>
+        ) : (
+          <>
+            <NavLink to="/login" className="nav-cta">
+              Login
+            </NavLink>
+            <NavLink to="/signup" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+              Sign Up
+            </NavLink>
+          </>
+        )}
+
+        <DarkModeToggle isDarkMode={isDarkMode} onToggleMode={onToggleMode} />
         <NavLink to="/settings" className={({ isActive }) => (isActive ? 'nav-settings active' : 'nav-settings')} aria-label="Settings">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <rect x="4" y="6" width="16" height="2" rx="1" />

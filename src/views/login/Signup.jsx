@@ -3,12 +3,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../auth/AuthContext.jsx'
 import './Auth.css'
 
-function Login() {
-  const { login, isAuthenticated } = useContext(AuthContext)
+function Signup() {
+  const { register, isAuthenticated } = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
 
   const destination = location.state?.from?.pathname || '/dashboard'
@@ -23,7 +25,12 @@ function Login() {
     event.preventDefault()
     setError('')
 
-    const result = login({ email, password })
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.')
+      return
+    }
+
+    const result = register({ name, email, password })
     if (!result.success) {
       setError(result.message)
       return
@@ -36,13 +43,24 @@ function Login() {
     <section className="route-page route-auth">
       <div className="content-card">
         <div className="auth-header">
-          <h1>Welcome back to SmartEdu</h1>
-          <p>Login to continue your learning journey and access your personalized dashboard.</p>
+          <h1>Create your SmartEdu account</h1>
+          <p>Sign up now to save progress, join courses, and personalize your learning dashboard.</p>
         </div>
 
         {error && <div className="auth-error">{error}</div>}
 
         <form className="auth-form" onSubmit={handleSubmit}>
+          <label>
+            Full name
+            <input
+              type="text"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              placeholder="Enter your full name"
+              required
+            />
+          </label>
+
           <label>
             Email address
             <input
@@ -60,22 +78,33 @@ function Login() {
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              placeholder="Enter your password"
+              placeholder="Create a password"
+              required
+            />
+          </label>
+
+          <label>
+            Confirm password
+            <input
+              type="password"
+              value={confirmPassword}
+              onChange={(event) => setConfirmPassword(event.target.value)}
+              placeholder="Repeat your password"
               required
             />
           </label>
 
           <button type="submit" className="auth-button">
-            Login
+            Create account
           </button>
         </form>
 
         <p className="auth-footnote">
-          New to SmartEdu? <Link to="/signup">Create an account</Link>
+          Already have an account? <Link to="/login">Login</Link>
         </p>
       </div>
     </section>
   )
 }
 
-export default Login
+export default Signup
