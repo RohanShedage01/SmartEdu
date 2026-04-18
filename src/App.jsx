@@ -34,14 +34,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/courses" element={<Spark />} />
             <Route path="/funiq" element={<Funiq />} />
             <Route path="/toppersuccess" element={<TopperSuccess />} />
