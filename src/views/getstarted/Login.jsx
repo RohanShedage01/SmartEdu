@@ -7,7 +7,14 @@ function Login() {
   const { login, register, isAuthenticated } = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
-  const [activeTab, setActiveTab] = useState('login')
+  
+  // Initialize activeTab based on URL parameters
+  const getInitialTab = () => {
+    const params = new URLSearchParams(location.search)
+    return params.get('tab') === 'signup' ? 'signup' : 'login'
+  }
+  
+  const [activeTab, setActiveTab] = useState(getInitialTab)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
@@ -22,12 +29,7 @@ function Login() {
     }
   }, [isAuthenticated, navigate, destination])
 
-  useEffect(() => {
-    const params = new URLSearchParams(location.search)
-    if (params.get('tab') === 'signup') {
-      setActiveTab('signup')
-    }
-  }, [location.search])
+  // Remove the useEffect that was calling setActiveTab synchronously
 
   const handleLoginSubmit = (event) => {
     event.preventDefault()
@@ -89,7 +91,7 @@ function Login() {
 
             <form className="auth-form" onSubmit={handleLoginSubmit}>
               <label>
-                Email address
+                <span>Email address</span>
                 <input
                   type="email"
                   value={email}
@@ -100,7 +102,7 @@ function Login() {
               </label>
 
               <label>
-                Password
+                <span>Password</span>
                 <input
                   type="password"
                   value={password}
@@ -126,7 +128,7 @@ function Login() {
 
             <form className="auth-form" onSubmit={handleSignupSubmit}>
               <label>
-                Full name
+                <span>Full name</span>
                 <input
                   type="text"
                   value={name}
@@ -137,7 +139,7 @@ function Login() {
               </label>
 
               <label>
-                Email address
+                <span>Email address</span>
                 <input
                   type="email"
                   value={email}
@@ -148,7 +150,7 @@ function Login() {
               </label>
 
               <label>
-                Password
+                <span>Password</span>
                 <input
                   type="password"
                   value={password}
@@ -159,7 +161,7 @@ function Login() {
               </label>
 
               <label>
-                Confirm password
+                <span>Confirm password</span>
                 <input
                   type="password"
                   value={confirmPassword}
