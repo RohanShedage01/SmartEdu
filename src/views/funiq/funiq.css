@@ -72,6 +72,7 @@
   box-shadow: 0 22px 50px rgba(15, 76, 129, 0.1);
   padding: 24px;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
 .funiq-card:hover,
@@ -79,6 +80,16 @@
   transform: translateY(-3px);
   border-color: rgba(15, 76, 129, 0.28);
   box-shadow: 0 28px 60px rgba(15, 76, 129, 0.14);
+}
+
+.funiq-card:focus-visible {
+  outline: 2px solid #0f4c81;
+  outline-offset: 2px;
+}
+
+.match-card:focus-visible {
+  outline: 2px solid #0f4c81;
+  outline-offset: 2px;
 }
 
 .funiq-card-icon {
@@ -124,9 +135,466 @@
   min-height: 170px;
 }
 
+/* Logical Tasks Section */
+.funiq-tasks-section {
+  margin-top: 60px;
+}
+
+.section-subtitle {
+  margin: 0;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.tasks-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.task-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(233, 242, 255, 0.95));
+  border: 1px solid rgba(15, 76, 129, 0.14);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 14px 35px rgba(15, 76, 129, 0.08);
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(15, 76, 129, 0.24);
+  box-shadow: 0 18px 45px rgba(15, 76, 129, 0.12);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.task-header h3 {
+  margin: 0;
+  color: #102a51;
+  font-size: 1.1rem;
+  flex: 1;
+}
+
+.difficulty {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.difficulty.easy {
+  background: rgba(34, 197, 94, 0.15);
+  color: #166534;
+}
+
+.difficulty.medium {
+  background: rgba(251, 146, 60, 0.15);
+  color: #9a3412;
+}
+
+.difficulty.hard {
+  background: rgba(239, 68, 68, 0.15);
+  color: #991b1b;
+}
+
+.task-description {
+  margin: 0 0 16px;
+  color: #475569;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.task-answer {
+  margin-top: 14px;
+}
+
+.task-answer summary {
+  cursor: pointer;
+  color: #0f4c81;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 0;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.task-answer summary:hover {
+  color: #0a3555;
+  text-decoration: underline;
+}
+
+.answer-text {
+  margin: 12px 0 0;
+  padding: 14px;
+  background: rgba(15, 76, 129, 0.06);
+  border-left: 3px solid #0f4c81;
+  border-radius: 8px;
+  color: #102a51;
+  font-weight: 500;
+}
+
+/* Logical Games Section */
+.funiq-games-section {
+  margin-top: 60px;
+}
+
+.games-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.game-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(233, 242, 255, 0.95));
+  border: 1px solid rgba(15, 76, 129, 0.14);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 14px 35px rgba(15, 76, 129, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(15, 76, 129, 0.28);
+  box-shadow: 0 20px 50px rgba(15, 76, 129, 0.15);
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.game-header h3 {
+  margin: 0;
+  color: #102a51;
+  font-size: 1.15rem;
+  flex: 1;
+}
+
+.game-type {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(66, 163, 216, 0.15);
+  color: #0f4c81;
+  white-space: nowrap;
+}
+
+.game-info {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.game-duration {
+  font-size: 0.9rem;
+  color: #0f4c81;
+  font-weight: 500;
+}
+
+.game-description {
+  margin: 0 0 16px;
+  color: #475569;
+  line-height: 1.65;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 76, 129, 0.1);
+}
+
+.rewards {
+  font-size: 0.9rem;
+  color: #0f4c81;
+  font-weight: 600;
+}
+
+.play-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0f4c81, #124776);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 76, 129, 0.3);
+}
+
+.play-btn:active {
+  transform: translateY(0);
+}
+
+/* Scrollable Section Styles */
+.scroll-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.scroll-arrow {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 2px solid rgba(15, 76, 129, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f4c81;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-arrow:hover {
+  background: #0f4c81;
+  color: white;
+  border-color: #0f4c81;
+  transform: scale(1.05);
+}
+
+.scroll-arrow:active {
+  transform: scale(0.95);
+}
+
+.tasks-scroll-container,
+.games-scroll-container {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-right: 8px;
+  flex: 1;
+  min-width: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 76, 129, 0.3) transparent;
+}
+
+.tasks-scroll-container::-webkit-scrollbar,
+.games-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tasks-scroll-container::-webkit-scrollbar-track,
+.games-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tasks-scroll-container::-webkit-scrollbar-thumb,
+.games-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(15, 76, 129, 0.3);
+  border-radius: 3px;
+}
+
+.tasks-scroll-container::-webkit-scrollbar-thumb:hover,
+.games-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(15, 76, 129, 0.5);
+}
+
+.task-card,
+.game-card,
+.puzzle-card {
+  flex-shrink: 0;
+  width: 320px;
+}
+
+/* Puzzles Section */
+.funiq-puzzles-section {
+  margin-top: 60px;
+}
+
+.puzzles-scroll-container {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-right: 8px;
+  flex: 1;
+  min-width: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 76, 129, 0.3) transparent;
+}
+
+.puzzles-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.puzzles-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.puzzles-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(15, 76, 129, 0.3);
+  border-radius: 3px;
+}
+
+.puzzles-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(15, 76, 129, 0.5);
+}
+
+.puzzle-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(233, 242, 255, 0.95));
+  border: 1px solid rgba(15, 76, 129, 0.14);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 14px 35px rgba(15, 76, 129, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.puzzle-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(15, 76, 129, 0.28);
+  box-shadow: 0 20px 50px rgba(15, 76, 129, 0.15);
+}
+
+.puzzle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.puzzle-header h3 {
+  margin: 0;
+  color: #102a51;
+  font-size: 1.15rem;
+  flex: 1;
+}
+
+.puzzle-difficulty {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.puzzle-difficulty.easy {
+  background: rgba(34, 197, 94, 0.15);
+  color: #166534;
+}
+
+.puzzle-difficulty.medium {
+  background: rgba(251, 146, 60, 0.15);
+  color: #9a3412;
+}
+
+.puzzle-difficulty.hard {
+  background: rgba(239, 68, 68, 0.15);
+  color: #991b1b;
+}
+
+.puzzle-meta {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.puzzle-size,
+.puzzle-time {
+  font-size: 0.9rem;
+  color: #0f4c81;
+  font-weight: 500;
+}
+
+.puzzle-description {
+  margin: 0 0 16px;
+  color: #475569;
+  line-height: 1.65;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.puzzle-footer {
+  display: flex;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 76, 129, 0.1);
+}
+
+.solve-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0f4c81, #124776);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.solve-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 76, 129, 0.3);
+}
+
+.solve-btn:active {
+  transform: translateY(0);
+}
+
 @media (max-width: 900px) {
   .funiq-page {
     padding: 32px 18px 64px;
+  }
+
+  .task-card,
+  .game-card,
+  .puzzle-card {
+    width: 280px;
+  }
+
+  .scroll-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
   }
 }
 
