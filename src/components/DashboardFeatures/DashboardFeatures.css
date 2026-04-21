@@ -220,9 +220,17 @@ body.dark .preview-title-group h3 {
   color: #475569;
 }
 
+body.dark .preview-bullet {
+  color: rgba(226, 232, 240, 0.85);
+}
+
 .preview-bullet span {
   margin-top: 4px;
   color: #0f4c81;
+}
+
+body.dark .preview-bullet span {
+  color: #60a5fa;
 }
 
 .preview-launch {
@@ -233,11 +241,20 @@ body.dark .preview-title-group h3 {
   color: #fff;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+body.dark .preview-launch {
+  background: #1e3a5f;
 }
 
 .preview-launch:hover {
   background: #164d77;
+  transform: translateY(-1px);
+}
+
+body.dark .preview-launch:hover {
+  background: #2d5a8c;
 }
 
 @media (max-width: 1040px) {

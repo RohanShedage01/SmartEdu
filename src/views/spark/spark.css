@@ -6,6 +6,12 @@
     linear-gradient(135deg, #f5f9ff 0%, #ecf4fb 45%, #e7eef9 100%);
 }
 
+body.dark .spark-page {
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.1), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(96, 165, 250, 0.08), transparent 18%),
+    linear-gradient(135deg, #071127 0%, #0b1d38 45%, #0d2442 100%);
+}
+
 @media (max-width: 640px) {
   .spark-page {
     padding: 28px 18px 60px;

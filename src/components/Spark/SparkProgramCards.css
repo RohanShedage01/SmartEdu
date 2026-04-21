@@ -14,11 +14,20 @@
   font-size: 0.8rem;
 }
 
+body.dark .section-tag {
+  background: rgba(96, 165, 250, 0.12);
+  color: #93c5fd;
+}
+
 .spark-programs h2 {
   margin: 18px 0 0;
   font-size: clamp(2rem, 2.5vw, 2.6rem);
   color: #102a51;
   line-height: 1.1;
+}
+
+body.dark .spark-programs h2 {
+  color: #e0e7ff;
 }
 
 .spark-card-grid {
@@ -40,6 +49,12 @@
   position: relative;
 }
 
+body.dark .spark-card {
+  background: linear-gradient(180deg, rgba(15, 32, 55, 0.95), rgba(10, 21, 42, 0.95));
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
+}
+
 .spark-card::before {
   content: '';
   position: absolute;
@@ -51,9 +66,19 @@
   pointer-events: none;
 }
 
+body.dark .spark-card::before {
+  background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(96, 165, 250, 0.08), transparent 24%);
+}
+
 .spark-card:hover {
   transform: translateY(-3px);
   border-color: #0f4c81;
+}
+
+body.dark .spark-card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 24px 50px rgba(59, 130, 246, 0.15);
 }
 
 .spark-card-icon {
@@ -68,15 +93,28 @@
   font-size: 1.4rem;
 }
 
+body.dark .spark-card-icon {
+  background: rgba(96, 165, 250, 0.12);
+  color: #93c5fd;
+}
+
 .spark-card h3 {
   margin: 0;
   color: #102a51;
+}
+
+body.dark .spark-card h3 {
+  color: #e0e7ff;
 }
 
 .spark-card p {
   margin: 0;
   color: #475569;
   line-height: 1.75;
+}
+
+body.dark .spark-card p {
+  color: rgba(226, 232, 240, 0.85);
 }
 
 @media (max-width: 640px) {

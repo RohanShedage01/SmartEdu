@@ -9,6 +9,12 @@
   position: relative;
 }
 
+body.dark .chat-card {
+  background: linear-gradient(180deg, rgba(15, 32, 55, 0.95), rgba(10, 21, 42, 0.95));
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.25);
+}
+
 .chat-card::before {
   content: '';
   position: absolute;
@@ -18,6 +24,23 @@
   border-radius: 28px;
   opacity: 0.85;
   pointer-events: none;
+}
+
+body.dark .chat-card::before {
+  background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(96, 165, 250, 0.08), transparent 24%);
+}
+
+.chat-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #0f4c81;
+  position: relative;
+  z-index: 1;
+}
+
+body.dark .chat-card h2 {
+  color: #e0e7ff;
 }
 
 .chat-messages {
@@ -37,15 +60,27 @@
   color: #0f172a;
 }
 
+body.dark .chat-message {
+  background: rgba(10, 21, 42, 0.8);
+  color: rgba(226, 232, 240, 0.9);
+}
+
 .chat-message.user {
   background: #e0f2fe;
   justify-self: end;
+}
+
+body.dark .chat-message.user {
+  background: rgba(15, 76, 129, 0.35);
+  color: rgba(226, 232, 240, 0.9);
 }
 
 .chat-input {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 .chat-input input {
@@ -55,10 +90,26 @@
   padding: 14px 16px;
   outline: none;
   color: #0f172a;
+  background: #ffffff;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.chat-input input::placeholder {
-  color: #94a3b8;
+body.dark .chat-input input {
+  background: rgba(10, 21, 42, 0.8);
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  color: rgba(226, 232, 240, 0.9);
+}
+
+body.dark .chat-input input::placeholder {
+  color: rgba(226, 232, 240, 0.5);
+}
+
+.chat-input input:focus {
+  border-color: #0f4c81;
+}
+
+body.dark .chat-input input:focus {
+  border-color: #60a5fa;
 }
 
 .chat-input button {
@@ -68,4 +119,19 @@
   background: #0f4c81;
   color: #fff;
   cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+body.dark .chat-input button {
+  background: #1e3a5f;
+}
+
+.chat-input button:hover {
+  background: #164d77;
+  transform: translateY(-1px);
+}
+
+body.dark .chat-input button:hover {
+  background: #2d5a8c;
 }

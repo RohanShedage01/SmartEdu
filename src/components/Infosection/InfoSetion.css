@@ -103,6 +103,10 @@ body.dark .info-card:hover {
   font-size: 1rem;
 }
 
+body.dark .info-card p {
+  color: rgba(226, 232, 240, 0.85);
+}
+
 .info-goals-list {
   display: grid;
   gap: 14px;
@@ -118,6 +122,10 @@ body.dark .info-card:hover {
   line-height: 1.8;
 }
 
+body.dark .info-goals-list li {
+  color: rgba(226, 232, 240, 0.85);
+}
+
 .info-goals-list li::before {
   content: '✔';
   position: absolute;
@@ -126,6 +134,10 @@ body.dark .info-card:hover {
   color: #1e70d7;
   font-size: 1.1rem;
   line-height: 1;
+}
+
+body.dark .info-goals-list li::before {
+  color: #60a5fa;
 }
 
 @media (max-width: 820px) {
