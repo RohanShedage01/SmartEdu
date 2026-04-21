@@ -3,8 +3,15 @@ import './darkmode.css'
 
 function DarkModeToggle({ isDarkMode, onToggleMode }) {
   return (
-    <button className={`darkmode-toggle ${isDarkMode ? 'active' : ''}`} type="button" onClick={onToggleMode}>
-      {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+    <button 
+      className={`darkmode-switch ${isDarkMode ? 'active' : ''}`} 
+      type="button" 
+      onClick={onToggleMode}
+      aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
+      <span className="switch-container">
+        <span className="switch-toggle"></span>
+      </span>
     </button>
   )
 }

@@ -5,6 +5,11 @@
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+body.dark .smartedu-footer {
+  background: linear-gradient(180deg, rgba(10, 32, 68, 0.96), rgba(5, 20, 45, 0.96));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .footer-top {
   display: grid;
   grid-template-columns: repeat(3, minmax(220px, 1fr));
@@ -18,10 +23,18 @@
   color: #fff;
 }
 
+body.dark .footer-brand h3 {
+  color: #fff;
+}
+
 .footer-brand p {
   margin: 0;
   line-height: 1.8;
   color: rgba(238, 247, 255, 0.85);
+}
+
+body.dark .footer-brand p {
+  color: rgba(234, 244, 255, 0.85);
 }
 
 .footer-links h4,
@@ -31,6 +44,11 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #d7ecff;
+}
+
+body.dark .footer-links h4,
+body.dark .footer-contact h4 {
+  color: rgba(214, 239, 255, 0.9);
 }
 
 .footer-links nav,
@@ -46,7 +64,16 @@
   transition: color 0.2s ease;
 }
 
+body.dark .footer-links a,
+body.dark .footer-contact p {
+  color: rgba(212, 236, 255, 0.82);
+}
+
 .footer-links a:hover {
+  color: #ffffff;
+}
+
+body.dark .footer-links a:hover {
   color: #ffffff;
 }
 
@@ -63,10 +90,18 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+body.dark .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .footer-bottom p {
   margin: 0;
   font-size: 0.95rem;
   color: rgba(238, 247, 255, 0.78);
+}
+
+body.dark .footer-bottom p {
+  color: rgba(212, 236, 255, 0.78);
 }
 
 .footer-social {
@@ -80,7 +115,16 @@
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
+body.dark .footer-social a {
+  color: rgba(212, 236, 255, 0.82);
+}
+
 .footer-social a:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+body.dark .footer-social a:hover {
   color: #ffffff;
   transform: translateY(-1px);
 }

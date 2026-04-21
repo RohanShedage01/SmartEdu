@@ -30,9 +30,17 @@
   background: #f6f9fc;
 }
 
+body.dark .smartedu-info-section {
+  background: #0d1b2f;
+}
+
 .smartedu-info-section h1 {
   font-size: 2.5rem;
   margin-bottom: 16px;
+}
+
+body.dark .smartedu-info-section h1 {
+  color: #e0e7ff;
 }
 
 .smartedu-info-section p {
@@ -41,12 +49,22 @@
   max-width: 760px;
 }
 
+body.dark .smartedu-info-section p {
+  color: rgba(226, 232, 240, 0.85);
+}
+
 .smartedu-why-section h2,
 .smartedu-contact-about h2,
 .smartedu-assistant-section h2 {
   margin-bottom: 20px;
   font-size: 2rem;
   color: #0f4c81;
+}
+
+body.dark .smartedu-why-section h2,
+body.dark .smartedu-contact-about h2,
+body.dark .smartedu-assistant-section h2 {
+  color: #e0e7ff;
 }
 
 .card-grid {
@@ -66,10 +84,25 @@
   box-shadow: 0 10px 24px rgba(15, 76, 129, 0.08);
 }
 
+body.dark .feature-card,
+body.dark .small-card,
+body.dark .assistant-card,
+body.dark .education-contact-card {
+  background: rgba(15, 32, 55, 0.95);
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
 .feature-card h3,
 .assistant-card h3,
 .education-contact-card h3 {
   margin-bottom: 12px;
+}
+
+body.dark .feature-card h3,
+body.dark .assistant-card h3,
+body.dark .education-contact-card h3 {
+  color: #e0e7ff;
 }
 
 .small-card {
@@ -100,6 +133,12 @@
   background: radial-gradient(circle at top left, rgba(15, 76, 129, 0.16), transparent 24%),
     radial-gradient(circle at bottom right, rgba(66, 163, 216, 0.12), transparent 18%),
     linear-gradient(135deg, #f5f9ff 0%, #ecf4fb 45%, #e5eff8 100%);
+}
+
+body.dark .smartedu-page {
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.1), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(96, 165, 250, 0.08), transparent 18%),
+    linear-gradient(135deg, #071127 0%, #0b1d38 45%, #0d2442 100%);
 }
 
 .smartedu-page::before,
